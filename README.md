@@ -1,1 +1,1 @@
-# SummitApp-Back
+# This repository is for the codebase of the backend part of SummitApp 
