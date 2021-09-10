@@ -23,6 +23,7 @@
   (mysql/mariadb connection params)
 - Install dependencies `yarn`
 - Start the app `yarn start` (app will be exposed through the port 3000)
+- Navigate to `api/docs/`
 
 ### Inside Docker containers
 
