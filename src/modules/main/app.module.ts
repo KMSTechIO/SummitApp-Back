@@ -6,6 +6,8 @@ import { ConfigModule, ConfigService } from './../config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
+import { EventsModule } from '../event';
+
 @Module({
   imports: [
     TypeOrmModule.forRootAsync({
@@ -27,8 +29,9 @@ import { AppService } from './app.service';
     ConfigModule,
     AuthModule,
     CommonModule,
+    EventsModule
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }
