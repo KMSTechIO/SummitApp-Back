@@ -20,7 +20,7 @@
 - Create .env file `cp .env.example .env` and replace existing env variables
   (mysql connection params)
 - Install dependencies `yarn`
-- Start the app `yarn start` (app will be exposed through the port 3000)
+- Start the app `yarn run start:dev` (app will be exposed through the port 3000)
 - Navigate to `api/docs/`
 
 
