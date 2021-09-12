@@ -7,6 +7,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
 import { EventModule } from 'modules/event';
+import { SessionModule } from 'modules/session';
 
 @Module({
   imports: [
@@ -29,7 +30,8 @@ import { EventModule } from 'modules/event';
     ConfigModule,
     AuthModule,
     CommonModule,
-    EventModule
+    EventModule,
+    SessionModule
   ],
   controllers: [AppController],
   providers: [AppService],

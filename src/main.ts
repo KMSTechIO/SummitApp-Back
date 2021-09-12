@@ -5,11 +5,11 @@ import { TrimStringsPipe } from './modules/common/transformer/trim-strings.pipe'
 import { AppModule } from './modules/main/app.module';
 import { setupSwagger } from './swagger';
 
-async function bootstrap() {
+async function bootstrap() {  
   const app = await NestFactory.create(AppModule,
     { logger: ['error', 'warn', 'log'] }
   );
-  setupSwagger(app);
+  setupSwagger(app);  
   app.enableCors();
   app.useGlobalPipes(new TrimStringsPipe(), new ValidationPipe());
   useContainer(app.select(AppModule), { fallbackOnErrors: true });

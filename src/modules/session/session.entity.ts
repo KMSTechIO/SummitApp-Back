@@ -5,40 +5,36 @@ import {
 } from 'typeorm';
 
 /*
-Table events {
+Table sessions {
   id int [pk, increment] 
-  title varchar
-  host varchar
-  city varchar
-  state varchar
-  date datetime
+  sessionTitle varchar
+  sessionHost varchar
+  sessionTime datetime
+  sessionKeyNote varchar
 }
 */
 
-@Entity('events')
-export class EventEntity {
+@Entity('sessions')
+export class SessionEntity {
     @PrimaryGeneratedColumn()
     id: number;
 
     @Column({ nullable: true })
-    title: string;
+    sessionTitle: string;
 
     @Column({ nullable: true })
-    host: string;
+    sessionHost: string;
 
     @Column({ nullable: true })
-    city: string;
+    sessionTime: string;
 
     @Column({ nullable: true })
-    state: string;
+    sessionKeyNote: string;
 
-    @Column({ type: 'timestamp', nullable: true })
-    date: string;
-
-    @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP'})
+    @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
     createdAt: string;
 
-    @Column({ type: 'timestamp', nullable: true })
+    @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
     updatedAt: string;
 
     @Column({ nullable: true })

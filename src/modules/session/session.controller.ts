@@ -1,13 +1,13 @@
 import { Controller, Get, Post, Body, UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { ApiBearerAuth, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { EventService } from './event.service';
-import { EventPayload } from './event.payload';
+import { SessionService } from './session.service';
+import { SessionPayload } from './session.payload';
 
-@Controller('api/events')
-@ApiTags('event')
-export class EventController {
-    constructor(private eventService: EventService) { }
+@Controller('api/sessions')
+@ApiTags('session')
+export class SessionController {
+    constructor(private sessionService: SessionService) { }
 
     @ApiBearerAuth()
     @UseGuards(AuthGuard())
@@ -16,7 +16,7 @@ export class EventController {
     @ApiResponse({ status: 401, description: 'Unauthorized' })
     async showAllEvents() {
         return {
-            data: await this.eventService.showAll(),
+            data: await this.sessionService.showAll(),
         };
     }
 
@@ -25,7 +25,7 @@ export class EventController {
     @Post('create')
     @ApiResponse({ status: 200, description: 'Successful Response' })
     @ApiResponse({ status: 401, description: 'Unauthorized' })
-    async create(@Body() payload: EventPayload): Promise<any> {
-        return await this.eventService.create(payload);
+    async create(@Body() payload: SessionPayload): Promise<any> {
+        return await this.sessionService.create(payload);
     }
 }
