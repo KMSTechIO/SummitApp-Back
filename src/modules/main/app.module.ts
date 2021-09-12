@@ -6,7 +6,7 @@ import { ConfigModule, ConfigService } from './../config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
-import { EventsModule } from '../event';
+import { EventModule } from 'modules/event';
 
 @Module({
   imports: [
@@ -29,7 +29,7 @@ import { EventsModule } from '../event';
     ConfigModule,
     AuthModule,
     CommonModule,
-    EventsModule
+    EventModule
   ],
   controllers: [AppController],
   providers: [AppService],

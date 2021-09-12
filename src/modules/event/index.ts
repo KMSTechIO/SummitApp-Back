@@ -1,1 +1,5 @@
-export * from './events.module';
+import { EventModule } from './event.module';
+
+export {
+    EventModule
+}

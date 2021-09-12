@@ -48,7 +48,7 @@ export class User {
   @Column()
   phone: string;
 
-  @Column({ type: 'timestamp', nullable: true })
+  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   createdAt: string;
 
   @Column({ type: 'timestamp', nullable: true })

@@ -1,11 +1,11 @@
 import {
     Entity,
     PrimaryGeneratedColumn,
-    Column,
+    Column
 } from 'typeorm';
 
-@Entity('event')
-export class Event {
+@Entity('events')
+export class EventEntity {
     @PrimaryGeneratedColumn()
     id: number;
 
@@ -24,7 +24,7 @@ export class Event {
     @Column({ type: 'timestamp', nullable: true })
     date: string;
 
-    @Column({ type: 'timestamp', nullable: true })
+    @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP'})
     createdAt: string;
 
     @Column({ type: 'timestamp', nullable: true })

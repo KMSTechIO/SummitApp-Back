@@ -1,12 +1,21 @@
 import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import { Repository, Like, In, EntityManager } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Event } from './event.entity';
-
+import { EventEntity } from './event.entity';
 @Injectable()
 export class EventService {
     constructor(
-        @InjectRepository(Event)
-        private readonly eventRepository: Repository<Event>
+        @InjectRepository(EventEntity)
+        private eventRepository: Repository<EventEntity>,
     ) { }
+
+    async showAll() {
+        return await this.eventRepository.find();
+    }
+
+    async create(data) {        
+        const eventObj = this.eventRepository.create(data);
+        await this.eventRepository.save(data);
+        return eventObj;
+    }
 }
