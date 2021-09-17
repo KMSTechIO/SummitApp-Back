@@ -28,7 +28,7 @@ export class SessionPayload {
     @ApiProperty({
         required: false,
     })
-    updatedAt: string;
+    expertiseLabel: string;
 
     @ApiProperty({
         required: false,
@@ -49,4 +49,10 @@ export class SessionPayload {
         required: false,
     })
     deviceId: string;
+
+    @ApiProperty({
+        required: true,
+    })
+    @IsNotEmpty()
+    event: number;
 }

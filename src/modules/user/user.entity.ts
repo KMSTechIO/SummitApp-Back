@@ -51,7 +51,7 @@ export class User {
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   createdAt: string;
 
-  @Column({ type: 'timestamp', nullable: true })
+  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   updatedAt: string;
 
   @Column({ nullable: true })
@@ -77,8 +77,6 @@ export class UserFillableFields {
   city: string;
   state: string;
   phone: string;
-  createdAt: string;
-  updatedAt: string;
   createdBy: string;
   updatedBy: string;
   deviceType: string;

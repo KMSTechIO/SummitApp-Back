@@ -13,6 +13,10 @@ export class SessionService {
         return await this.sessionRepository.find();
     }
 
+    async getSessionsByEventId(){
+        return await this.sessionRepository.find();
+    }
+
     async create(data) {        
         const sessionObj = this.sessionRepository.create(data);
         await this.sessionRepository.save(data);

@@ -68,18 +68,6 @@ export class RegisterPayload {
     required: false,
   })
   @IsNotEmpty()
-  createdAt: string;
-
-  @ApiProperty({
-    required: false,
-  })
-  @IsNotEmpty()
-  updatedAt: string;
-
-  @ApiProperty({
-    required: false,
-  })
-  @IsNotEmpty()
   createdBy: string;
 
   @ApiProperty({
