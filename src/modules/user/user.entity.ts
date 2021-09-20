@@ -46,6 +46,9 @@ export class User {
   state: string;
 
   @Column()
+  zip: string;
+
+  @Column()
   phone: string;
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
@@ -76,6 +79,7 @@ export class UserFillableFields {
   addressLine2: string;
   city: string;
   state: string;
+  zip:string;
   phone: string;
   createdBy: string;
   updatedBy: string;

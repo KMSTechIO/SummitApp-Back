@@ -44,6 +44,6 @@ export class SessionEntity {
   @Column({ nullable: true })
   deviceId: string;
 
-  @ManyToOne(() => EventEntity, { onDelete: 'CASCADE' })
+  @ManyToOne(() => EventEntity, (event)=>event.sessions)
   event: EventEntity;
 }

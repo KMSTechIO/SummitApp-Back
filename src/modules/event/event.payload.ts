@@ -34,11 +34,6 @@ export class EventPayload {
     @ApiProperty({
         required: false,
     })
-    updatedAt: string;
-
-    @ApiProperty({
-        required: false,
-    })
     createdBy: string;
 
     @ApiProperty({

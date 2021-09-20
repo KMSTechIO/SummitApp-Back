@@ -62,28 +62,32 @@ export class RegisterPayload {
     required: true,
   })
   @IsNotEmpty()
+  zip: string;
+
+  @ApiProperty({
+    required: true,
+  })
+  @IsNotEmpty()
   phone: string;
 
   @ApiProperty({
     required: false,
   })
-  @IsNotEmpty()
   createdBy: string;
 
   @ApiProperty({
     required: false,
   })
-  @IsNotEmpty()
   updatedBy: string;
 
   @ApiProperty({
-    required: false,
+    required: true,
   })
   @IsNotEmpty()
   deviceType: string;
 
   @ApiProperty({
-    required: false,
+    required: true,
   })
   @IsNotEmpty()
   deviceId: string;

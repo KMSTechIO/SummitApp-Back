@@ -13,5 +13,6 @@ import { EventEntity } from 'modules/event/event.entity';
     ],
     controllers: [SessionController],
     providers: [SessionService],
+    exports: [SessionService]
 })
 export class SessionModule { }
