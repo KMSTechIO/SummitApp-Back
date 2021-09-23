@@ -11,6 +11,7 @@ export class AppController {
   @Get()
   @UseGuards(AuthGuard())
   root(): string {
+    console.log("OK");
     return this.appService.root();
   }
 }
