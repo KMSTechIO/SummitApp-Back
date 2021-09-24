@@ -9,6 +9,8 @@ import { EventPayload } from './event.payload';
 export class EventController {
     constructor(private eventService: EventService) { }
     
+    @ApiBearerAuth()
+    @UseGuards(AuthGuard())
     @Get('all')
     @ApiResponse({ status: 200, description: 'Successful Response' })
     @ApiResponse({ status: 401, description: 'Unauthorized' })

@@ -68,6 +68,9 @@ export class User {
 
   @Column({ nullable: true })
   deviceId: string;
+
+  @Column({ nullable: true })
+  avatarURL: string;
 }
 
 export class UserFillableFields {
@@ -85,4 +88,5 @@ export class UserFillableFields {
   updatedBy: string;
   deviceType: string;
   deviceId: string;
+  avatarURL:string;
 }

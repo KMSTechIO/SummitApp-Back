@@ -15,6 +15,10 @@ export class UsersService {
     return this.userRepository.findOne({ id });
   }
 
+  async getAll() {
+    return this.userRepository.find();
+  }
+
   async getByEmail(email: string) {
     return await this.userRepository.findOne({ email });
   }

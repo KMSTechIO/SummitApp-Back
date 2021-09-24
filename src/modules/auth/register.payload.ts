@@ -91,4 +91,9 @@ export class RegisterPayload {
   })
   @IsNotEmpty()
   deviceId: string;
+
+  @ApiProperty({
+    required: false,
+  })
+  avatarURL: string;
 }
