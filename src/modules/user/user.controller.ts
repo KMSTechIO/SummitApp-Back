@@ -19,9 +19,7 @@ export class UserController {
             data: await this.userService.getAll(),
         };
     }
-
-    @ApiBearerAuth()
-    @UseGuards(AuthGuard())
+    
     @Get('/exist/:email')
     @ApiResponse({ status: 200, description: 'Successful Response' })
     @ApiResponse({ status: 401, description: 'Unauthorized' })
